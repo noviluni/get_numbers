@@ -65,6 +65,7 @@ class ClevertComBrSpider(BaseNumberSpider):
     ]
 
     def crawl_numbers(self, start_number, max_number, locale):
+        """Maximum allowed value:  2147483647.99"""
         url = 'https://clevert.com.br/t/en/numbers_to_words/generate'
 
         headers = {

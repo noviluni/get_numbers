@@ -12,4 +12,4 @@ def check_missing_numbers(path, max_number, min_number=0):
     for number in range(int(min_number), int(max_number) + 1):
         if number not in df.number.values:
             print(f'- The number {number} is missing.')
-    print('Checking completes')
+    print('Checking completed')
