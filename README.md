@@ -34,5 +34,5 @@ check_missing_numbers('numbers_en_US.csv', max_number=100)
 
 You can also get the permutations files by running something similar to:
 ```bash
-scrapy crawl japanesenumberconverter.com -a permutations=1 -a locale=ja -o numbers_ja2.csv
+scrapy crawl japanesenumberconverter.com -a permutations=1 -a locale=ja -o numbers_ja_permutations.csv
 ```
