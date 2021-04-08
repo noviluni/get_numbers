@@ -33,15 +33,15 @@ class BaseNumberSpider(Spider):
             self.logger.error(f'Missing the `locale` parameter')
             return
 
+        if self.locale not in self.supported_locales:
+            self.logger.error(f'"{self.locale}" is not a supported locale')
+            return
+
         if hasattr(self, 'permutations'):
             numbers = PERMUTATIONS
         else:
             if not hasattr(self, 'max_number'):
                 self.logger.error(f'Missing the `max_number` parameter')
-                return
-
-            if self.locale not in self.supported_locales:
-                self.logger.error(f'"{self.locale}" is not a supported locale')
                 return
             start_number = int(self.start_number) if hasattr(self, 'start_number') else 0
             numbers = list(range(start_number, int(self.max_number) + 1))
