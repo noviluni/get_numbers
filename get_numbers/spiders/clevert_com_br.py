@@ -73,7 +73,7 @@ class ClevertComBrSpider(BaseNumberSpider):
             "X-Requested-With": "XMLHttpRequest",
         }
 
-        for number in range(numbers):
+        for number in numbers:
             query_params = {
                 'number': str(number),
                 'currency': '',
