@@ -32,7 +32,7 @@ class Tools4noobsComSpider(BaseNumberSpider):
         'sv',
     ]
 
-    def crawl_numbers(self, start_number, max_number, locale):
+    def crawl_numbers(self, numbers, locale):
         url = 'https://www.tools4noobs.com/'
 
         headers = {
@@ -42,7 +42,7 @@ class Tools4noobsComSpider(BaseNumberSpider):
             "Origin": "https://www.tools4noobs.com",
         }
 
-        for number in range(start_number, max_number + 1):
+        for number in numbers:
 
             query_params = {
                 'action': 'ajax_number_spell_words',

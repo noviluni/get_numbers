@@ -10,7 +10,7 @@ class NumberWordCalculatorsRoSpider(BaseNumberSpider):
     allowed_domains = ['number-word.calculators.ro']
     supported_locales = ['en']  # add 'ro'? (`extract_number()` should be adapted)
 
-    def crawl_numbers(self, start_number, max_number, locale):
+    def crawl_numbers(self, numbers, locale):
         url = 'https://number-word.calculators.ro/convert-ordinal-numbers-to-English-text-words.php'
 
         headers = {
@@ -21,7 +21,7 @@ class NumberWordCalculatorsRoSpider(BaseNumberSpider):
             'calculators[lang]': locale,
         }
 
-        for number in range(start_number, max_number + 1):
+        for number in numbers:
             query_params = {
                 'rulare': '1',
                 'ordinal_number': str(number),

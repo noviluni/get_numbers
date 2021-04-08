@@ -64,7 +64,7 @@ class ClevertComBrSpider(BaseNumberSpider):
         'cy',
     ]
 
-    def crawl_numbers(self, start_number, max_number, locale):
+    def crawl_numbers(self, numbers, locale):
         """Maximum allowed value:  2147483647.99"""
         url = 'https://clevert.com.br/t/en/numbers_to_words/generate'
 
@@ -73,7 +73,7 @@ class ClevertComBrSpider(BaseNumberSpider):
             "X-Requested-With": "XMLHttpRequest",
         }
 
-        for number in range(start_number, int(max_number) + 1):
+        for number in range(numbers):
             query_params = {
                 'number': str(number),
                 'currency': '',

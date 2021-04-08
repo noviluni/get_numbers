@@ -45,7 +45,7 @@ class MathToolsSpider(BaseNumberSpider):
         'ua',
     ]
 
-    def crawl_numbers(self, start_number, max_number, locale):
+    def crawl_numbers(self, numbers, locale):
         url = 'https://math.tools/calculator/numbers/words'
 
         headers = {
@@ -55,7 +55,7 @@ class MathToolsSpider(BaseNumberSpider):
             # "X-Requested-With": "XMLHttpRequest",
         }
 
-        for number in range(start_number, max_number + 1):
+        for number in numbers:
             query_params = {'number': str(number), 'lang': locale, 'result': ' '}
 
             yield Request(
